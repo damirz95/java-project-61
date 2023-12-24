@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class EvenOrOdd {
     public static void evenOrOdd() {
-        String name = Cli.greeting();gi
+        String name = Cli.greeting();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int count = 0;

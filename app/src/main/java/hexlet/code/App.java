@@ -3,8 +3,6 @@
  */
 package hexlet.code;
 
-import java.util.Scanner;
-
 public class App {
 
     public static void main(String[] args) {
@@ -13,8 +11,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("0 - Exit");
-        Scanner scaner = new Scanner(System.in);
-        int chois = scaner.nextInt();
+        int chois = Engine.numbersScanner();
         if (chois == 1) {
             System.out.println("Your choice: " + chois + "\n");
             String run = Cli.greeting();

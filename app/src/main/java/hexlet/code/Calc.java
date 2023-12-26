@@ -7,7 +7,7 @@ public class Calc {
 
         String[] value = {"+", "-", "*"};
         int sum = 0;
-        int cout = 0;
+        int count = 0;
         for (int i = 0; i < 3; i++) {
             int[] numbers = {Engine.getRandomNumber(100), Engine.getRandomNumber(2), Engine.getRandomNumber(100)};
             String question = numbers[0] + " " + value[numbers[1]] + " " +  numbers[2];
@@ -25,13 +25,13 @@ public class Calc {
 
             if (sum == userAnswer) {
                 System.out.println("Correct!");
-                cout++;
+                count++;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + sum + "'.");
                 Engine.getFaild(userName);
                 break;
             }
-            if (cout == 3) {
+            if (count == 3) {
                 Engine.getCongratulations(userName);
             }
         }

@@ -10,17 +10,21 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
         int chois = Engine.numbersScanner();
         if (chois == 1) {
-            System.out.println("Your choice: " + chois + "\n");
+            Engine.getYourChoic(chois);
             String run = Cli.greeting();
         } else if (chois == 2) {
-            System.out.println("Your choice: " + chois + "\n");
+            Engine.getYourChoic(chois);
             EvenOrOdd.evenOrOdd();
         } else if (chois == 3) {
-            System.out.println("Your choice: " + chois + "\n");
+            Engine.getYourChoic(chois);
             Calc.calc();
+        } else if (chois == 4) {
+            Engine.getYourChoic(chois);
+            Gcd.gcd();
         }
     }
 }

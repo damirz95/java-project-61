@@ -25,4 +25,7 @@ public class Engine {
         Scanner scaner = new Scanner(System.in);
         return scaner.nextLine();
     }
+    public static void getYourChoic(int number) {
+        System.out.println("Your choice: " + number + "\n");
+    }
 }

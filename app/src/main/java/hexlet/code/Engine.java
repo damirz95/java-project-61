@@ -4,12 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS = 3;
+
     public static String getName() {
         return Cli.greeting();
-    }
-    public static int getRandomNumber(int numberBound) {
-        Random random = new Random();
-        return random.nextInt(numberBound);
     }
     public static void getFaild(String userName) {
         System.out.println("Let's try again, " + userName + "!");

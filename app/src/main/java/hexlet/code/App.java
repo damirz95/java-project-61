@@ -3,6 +3,11 @@
  */
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.EvenOrOdd;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
+
 public class App {
 
     public static void main(String[] args) {
@@ -11,20 +16,24 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
-        int chois = Engine.numbersScanner();
-        if (chois == 1) {
-            Engine.getYourChoic(chois);
+        int choice = Engine.numbersScanner();
+        if (choice == 1) {
+            Engine.getYourChoic(choice);
             String run = Cli.greeting();
-        } else if (chois == 2) {
-            Engine.getYourChoic(chois);
+        } else if (choice == 2) {
+            Engine.getYourChoic(choice);
             EvenOrOdd.evenOrOdd();
-        } else if (chois == 3) {
-            Engine.getYourChoic(chois);
+        } else if (choice == 3) {
+            Engine.getYourChoic(choice);
             Calc.calc();
-        } else if (chois == 4) {
-            Engine.getYourChoic(chois);
+        } else if (choice == 4) {
+            Engine.getYourChoic(choice);
             Gcd.gcd();
+        } else if (choice == 5) {
+            Engine.getYourChoic(choice);
+            Progression.progression();
         }
     }
 }

@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Gcd {
     public static void gcd() {
@@ -13,6 +15,7 @@ public class Gcd {
             if (numbers[0] == 0 && numbers[1] == 0) {
                 continue;
             }
+            //TODO: расчет вынести в отдельный метод
             for (int i = 1; i < maxValue; i++) {
                 if (((numbers[0] % i) == 0 && (numbers[1] % i) == 0)) {
                     maxDivizion = i;

@@ -1,29 +1,34 @@
 package hexlet.code;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class Engine {
     public static final int ROUNDS = 3;
-
-    public static String getName() {
-        return Cli.greeting();
-    }
-    public static void getFaild(String userName) {
-        System.out.println("Let's try again, " + userName + "!");
+    public static String greeting() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = Utils.textScanner();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
     }
     public static void getCongratulations(String userName) {
         System.out.println("Congratulations, " + userName + "!");
     }
-    public static int numbersScanner() {
-        Scanner scaner = new Scanner(System.in);
-        return scaner.nextInt();
+    public static void nextQuestion(String answer) {
+        System.out.println("Your answer: " + answer);
+        System.out.println("Correct!");
     }
-    public static String textScanner() {
-        Scanner scaner = new Scanner(System.in);
-        return scaner.nextLine();
+    public static void gameOver(String userName, String answer, String rightAnswer  ) {
+        System.out.println("Your answer: " + answer);
+        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
+        System.out.println("Let's try again, " + userName);
     }
-    public static void getYourChoic(int number) {
-        System.out.println("Your choice: " + number + "\n");
+    public static boolean checkingTheResponse (String rightAnswer, String userName) {
+        String answer = Utils.textScanner();
+        if (answer.equals(rightAnswer)) {
+            nextQuestion(answer);
+            return true;
+        } else {
+            gameOver(userName, answer, rightAnswer);
+            return false;
+        }
     }
 }

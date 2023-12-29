@@ -8,9 +8,13 @@ import hexlet.code.games.EvenOrOdd;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -18,22 +22,25 @@ public class App {
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
         System.out.println("0 - Exit");
-        int choice = Engine.numbersScanner();
-        if (choice == 1) {
-            Engine.getYourChoic(choice);
-            String run = Cli.greeting();
-        } else if (choice == 2) {
-            Engine.getYourChoic(choice);
-            EvenOrOdd.evenOrOdd();
-        } else if (choice == 3) {
-            Engine.getYourChoic(choice);
-            Calc.calc();
-        } else if (choice == 4) {
-            Engine.getYourChoic(choice);
-            Gcd.gcd();
-        } else if (choice == 5) {
-            Engine.getYourChoic(choice);
-            Progression.progression();
+        String selectedGame = scanner.nextLine();
+        switch (selectedGame) {
+            case "1":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                Cli.greeting();
+            case "2":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                EvenOrOdd.evenOrOdd();
+            case "3":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                Calc.calc();
+            case "4":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                Gcd.gcd();
+            case "5":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                Progression.progression();
+            default:
+                System.out.println(" ");
         }
     }
 }

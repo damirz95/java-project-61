@@ -10,7 +10,7 @@ public class Engine {
         return userName;
     }
     public static void getCongratulations(String userName) {
-        System.out.println("Congratulations, " + userName);
+        System.out.println("Congratulations, " + userName + "!");
     }
     public static void nextQuestion(String answer) {
         System.out.println("Your answer: " + answer);
@@ -19,7 +19,7 @@ public class Engine {
     public static void gameOver(String userName, String answer, String rightAnswer) {
         System.out.println("Your answer: " + answer);
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
-        System.out.println("Let's try again, " + userName);
+        System.out.println("Let's try again, " + userName + "!");
     }
     public static boolean checkingTheResponse(String rightAnswer, String userName) {
         String answer = Utils.textScanner();

@@ -28,7 +28,16 @@ public class Prime {
         }
     }
     public static String checkingTheNumber(int number) {
-        if (((number / 1 == number) && (number / number == 1) && (number % 2 != 0)) || number == 2) {
+        int count = 0;
+        if (number == 2) {
+            return "yes";
+        }
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
             return "yes";
         } else {
             return "no";

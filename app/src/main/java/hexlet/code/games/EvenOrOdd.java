@@ -6,8 +6,9 @@ import hexlet.code.Utils;
 public class EvenOrOdd {
     public static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void evenOrOdd() {
-        System.out.println(DESCRIPTION);
         String userName = Engine.greeting();
+        System.out.println(DESCRIPTION);
+
 
         int count = 0;
         while (count < Engine.ROUNDS) {

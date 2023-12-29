@@ -10,7 +10,7 @@ public class Engine {
         return userName;
     }
     public static void getCongratulations(String userName) {
-        System.out.println("Congratulations, " + userName + "!");
+        System.out.println("Congratulations, " + userName);
     }
     public static void nextQuestion(String answer) {
         System.out.println("Your answer: " + answer);

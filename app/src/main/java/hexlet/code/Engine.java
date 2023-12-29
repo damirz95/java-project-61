@@ -16,12 +16,12 @@ public class Engine {
         System.out.println("Your answer: " + answer);
         System.out.println("Correct!");
     }
-    public static void gameOver(String userName, String answer, String rightAnswer  ) {
+    public static void gameOver(String userName, String answer, String rightAnswer) {
         System.out.println("Your answer: " + answer);
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
         System.out.println("Let's try again, " + userName);
     }
-    public static boolean checkingTheResponse (String rightAnswer, String userName) {
+    public static boolean checkingTheResponse(String rightAnswer, String userName) {
         String answer = Utils.textScanner();
         if (answer.equals(rightAnswer)) {
             nextQuestion(answer);

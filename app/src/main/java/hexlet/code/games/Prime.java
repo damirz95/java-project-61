@@ -29,7 +29,7 @@ public class Prime {
             return false;
         }
         // TODO; найти корень числа
-        for (int i = 2; i <= number; i++) {
+        for (int i = 1; i <= number; i++) {
             if (number % i == 0) {
                 count++;
                 if (count > 2) {

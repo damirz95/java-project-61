@@ -25,7 +25,7 @@ public class Engine {
                 break;
             }
         }
-        if (count == 3) {
+        if (count == ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

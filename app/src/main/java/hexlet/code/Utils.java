@@ -16,8 +16,4 @@ public class Utils {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
-    public static int numberScanner() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
 }

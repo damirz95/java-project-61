@@ -8,32 +8,27 @@ import hexlet.code.Utils;
 public class Progression {
     public static final String DESCRIPTION = "What number is missing in the progression?";
     public static final int PROGRESSION_LENGTH = 10;
+    public static final int MAX_VALUE = 100;
+    public static final int MIN_VALUE = 1;
     public static void progression() {
-        String userName = Engine.greeting();
-        System.out.println(DESCRIPTION);
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;
         while (count < Engine.ROUNDS) {
-            int first = Utils.getRandomNumber(1, 10);
-            int step = Utils.getRandomNumber(1, 10);
-            int hiddenMemberIndex = Utils.getRandomNumber(9);
+            int firstNumber = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            int step = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            String[] progression = makeProgression(firstNumber, step, PROGRESSION_LENGTH);
+            int hiddenMemberIndex = Utils.getRandomNumber(progression.length - 1);
 
-            String[] progression = makeProgression(first, step, PROGRESSION_LENGTH);
-            String correctAnswer = progression[hiddenMemberIndex];
+
+            String rightAnswer = progression[hiddenMemberIndex];
             progression[hiddenMemberIndex] = "..";
-
             String question = String.join(" ", progression);
-            System.out.println("Question: " + question);
 
-            boolean check = Engine.checkingTheResponse(correctAnswer, userName);
-            if (check) {
-                count++;
-            } else {
-                break;
-            }
+            questionsAndAnswers[count][0] = question;
+            questionsAndAnswers[count][1] = rightAnswer;
+            count++;
         }
-        if (count == 3) {
-            Engine.getCongratulations(userName);
-        }
+        Engine.run(questionsAndAnswers, DESCRIPTION);
     }
     public static String[] makeProgression(int first, int step, int progressionLength) {
         String[] progression = new String[progressionLength];

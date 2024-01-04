@@ -5,40 +5,37 @@ import hexlet.code.Utils;
 
 public class Calc {
     public static final String DESCRIPTION = "What is the result of the expression?";
+    public static final int MAX_VALUE = 100;
     public static void calc() {
-        String userName = Engine.greeting();
-        System.out.println(DESCRIPTION);
-
-        String[] operator = {"+", "-", "*"};
-
+        String[] operators = {"+", "-", "*"};
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;
-        for (int i = 0; i < Engine.ROUNDS; i++) {
-            int[] numbers = {Utils.getRandomNumber(100), Utils.getRandomNumber(2), Utils.getRandomNumber(100)};
-            String question = numbers[0] + " " + operator[numbers[1]] + " " +  numbers[2];
-            System.out.println("Question: " + question);
-            String rightAnswer = answerToTheQuestion(numbers);
 
-            boolean check = Engine.checkingTheResponse(rightAnswer, userName);
-            if (check) {
-                count++;
-            } else {
-                break;
-            }
+        while (count < Engine.ROUNDS) {
+            int number1 = Utils.getRandomNumber(MAX_VALUE);
+            int number2 = Utils.getRandomNumber(MAX_VALUE);
+            int index = Utils.getRandomNumber(operators.length - 1);
+            String operator = operators[index];
+
+            String question = number1 + " " + operator + " " +  number2;
+            int rightAnswer = calculate(number1, number2, operator);
+
+            questionsAndAnswers[count][0] = question;
+            questionsAndAnswers[count][1] = String.valueOf(rightAnswer);
+            count++;
         }
-        if (count == 3) {
-            Engine.getCongratulations(userName);
-        }
+        Engine.run(questionsAndAnswers, DESCRIPTION);
     }
-    public static String answerToTheQuestion(int[] numbers) {
+    public static int calculate(int number1, int number2, String operator) {
         int result = 0;
-        if (numbers[1] == 0) {
-            result = numbers[0] + numbers[2];
-        } else if (numbers[1] == 1) {
-            result = numbers[0] - numbers[2];
-        } else if (numbers[1] == 2) {
-            result = numbers[0] * numbers[2];
+        if (operator.equals("+")) {
+            result = number1 + number2;
+        } else if (operator.equals("-")) {
+            result = number1 - number2;
+        } else if (operator.equals("*")) {
+            result = number1 * number2;
         }
-        return Integer.toString(result);
+        return result;
     }
 
 }

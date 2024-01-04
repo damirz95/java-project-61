@@ -50,7 +50,12 @@ public class App {
                 System.out.println("Your choice: " + selectedGame + "\n");
                 Prime.prime();
                 break;
+            case "0":
+                System.out.println("Your choice: " + selectedGame + "\n");
+                System.out.println("Good bay!");
+                break;
             default:
+                System.out.println("Unknown game select!" + selectedGame);
                 break;
         }
     }

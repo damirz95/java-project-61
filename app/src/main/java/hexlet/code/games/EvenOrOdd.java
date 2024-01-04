@@ -5,32 +5,24 @@ import hexlet.code.Utils;
 
 public class EvenOrOdd {
     public static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final int MAX_VALUE = 100;
     public static void evenOrOdd() {
-        String userName = Engine.greeting();
-        System.out.println(DESCRIPTION);
-
-
         int count = 0;
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
+
         while (count < Engine.ROUNDS) {
-            int number = Utils.getRandomNumber(100);
-            System.out.println("Question: " + number);
-            String rightAnswer = getAnswer(number);
-            boolean check = Engine.checkingTheResponse(rightAnswer, userName);
-            if (check) {
-                count++;
-            } else {
-                break;
-            }
+            int number = Utils.getRandomNumber(MAX_VALUE);
+            String question = String.valueOf(number);
+            String rightAnswer = isEven(number) ? "yes" : "no";
+
+            questionsAndAnswers[count][0] = question;
+            questionsAndAnswers[count][1] = rightAnswer;
+
+            count++;
         }
-        if (count == 3) {
-            Engine.getCongratulations(userName);
-        }
+        Engine.run(questionsAndAnswers, DESCRIPTION);
     }
-    public static String getAnswer(int number) {
-        if (number % 2 == 0) {
-            return "yes";
-        } else {
-            return "no";
-        }
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }

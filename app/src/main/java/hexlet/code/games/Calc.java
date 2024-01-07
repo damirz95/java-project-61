@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
     public static final String DESCRIPTION = "What is the result of the expression?";
     public static final int MAX_VALUE = 100;
+
     public static void calc() {
         String[] operators = {"+", "-", "*"};
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];

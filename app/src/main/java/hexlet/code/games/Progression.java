@@ -10,6 +10,7 @@ public class Progression {
     public static final int PROGRESSION_LENGTH = 10;
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 1;
+
     public static void progression() {
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;

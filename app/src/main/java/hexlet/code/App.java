@@ -25,33 +25,27 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         String selectedGame = scanner.nextLine();
+        System.out.println("Your choice: " + selectedGame + "\n");
         switch (selectedGame) {
             case "1":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 Cli.greeting();
                 break;
             case "2":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 EvenOrOdd.evenOrOdd();
                 break;
             case "3":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 Calc.calc();
                 break;
             case "4":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 Gcd.gcd();
                 break;
             case "5":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 Progression.progression();
                 break;
             case "6":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 Prime.prime();
                 break;
             case "0":
-                System.out.println("Your choice: " + selectedGame + "\n");
                 System.out.println("Good bay!");
                 break;
             default:

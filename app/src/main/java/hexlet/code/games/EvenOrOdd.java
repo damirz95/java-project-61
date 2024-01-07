@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class EvenOrOdd {
     public static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static final int MAX_VALUE = 100;
+
     public static void evenOrOdd() {
         int count = 0;
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];

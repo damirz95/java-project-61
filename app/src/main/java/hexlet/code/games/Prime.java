@@ -7,6 +7,7 @@ public class Prime {
     public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 1;
+
     public static void prime() {
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;
@@ -24,20 +25,13 @@ public class Prime {
         Engine.run(questionsAndAnswers, DESCRIPTION);
     }
     public static boolean isPrime(int number) {
-        int count = 0;
-        if (number < 2) {
-            return false;
-        }
-        // TODO; найти корень числа
-        for (int i = 1; i <= number; i++) {
-            if (number % i == 0) {
-                count++;
-                if (count > 2) {
-                    return false;
-                }
-
+        int result = 0;
+        for (int i = 2; i < number / 2; i++) {
+            result = number % i;
+            if (result == 0) {
+                return false;
             }
         }
-        return count == 2;
+        return true;
     }
 }

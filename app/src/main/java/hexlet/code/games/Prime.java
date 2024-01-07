@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 public class Prime {
     public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int MAX_VALUE = 100;
-    public static final int MIN_VALUE = 1;
+    public static final int MIN_VALUE = 2;
 
     public static void prime() {
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];

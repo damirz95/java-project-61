@@ -28,22 +28,22 @@ public class App {
         System.out.println("Your choice: " + selectedGame + "\n");
         switch (selectedGame) {
             case "1":
-                Cli.greeting();
+                Cli.play();
                 break;
             case "2":
-                EvenOrOdd.evenOrOdd();
+                EvenOrOdd.play();
                 break;
             case "3":
-                Calc.calc();
+                Calc.play();
                 break;
             case "4":
-                Gcd.gcd();
+                Gcd.play();
                 break;
             case "5":
-                Progression.progression();
+                Progression.play();
                 break;
             case "6":
-                Prime.prime();
+                Prime.play();
                 break;
             case "0":
                 System.out.println("Good bay!");

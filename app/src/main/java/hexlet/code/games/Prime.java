@@ -8,7 +8,7 @@ public class Prime {
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 2;
 
-    public static void prime() {
+    public static void play() {
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;
 
@@ -25,13 +25,16 @@ public class Prime {
         Engine.run(questionsAndAnswers, DESCRIPTION);
     }
     public static boolean isPrime(int number) {
-        int result = 0;
-        for (int i = 2; i < number / 2; i++) {
-            result = number % i;
-            if (result == 0) {
+        if (number < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i += 1) {
+            if (number % i == 0) {
                 return false;
             }
         }
+
         return true;
     }
 }

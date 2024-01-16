@@ -8,7 +8,7 @@ public class Gcd {
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 1;
 
-    public static void gcd() {
+    public static void play() {
         String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
         int count = 0;
 
@@ -23,15 +23,7 @@ public class Gcd {
         }
         Engine.run(questionsAndAnswers, DESCRIPTION);
     }
-    public static int gcd(int number1, int number2) {
-        int maxDivision = 0;
-        int maxValue = Math.max(number1, number2);
-
-        for (int i = 1; i < maxValue; i++) {
-            if (((number1 % i) == 0 && (number2 % i) == 0)) {
-                maxDivision = i;
-            }
-        }
-        return maxDivision;
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }

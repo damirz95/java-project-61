@@ -9,14 +9,14 @@ public class Engine {
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = scanner.nextLine();;
+        String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
 
         System.out.println(description);
 
         for (String[] questAndAnswer : questionsAndAnswers) {
             System.out.println("Question: " + questAndAnswer[0]);
-            String userAnswer =scanner.nextLine();
+            String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
             if (userAnswer.equals(questAndAnswer[1])) {
                 System.out.println("Correct!");

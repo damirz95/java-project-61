@@ -14,7 +14,6 @@ An incorrect answer ends the game
 ## Start
 
 ```bash
-make build
 make install
 make run-dist
 ```
